@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudraft-kvs-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloudraft-kvs
+  template:
+    metadata:
+      labels:
+        app: cloudraft-kvs
+    spec:
+      containers:
+        - name: cloudraft-kvs
+          image: rkreddy12/customkvs:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloudraft-kvs-service
+spec:
+  selector:
+    app: cloudraft-kvs
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
