@@ -24,7 +24,6 @@ func TestSetOperation(t *testing.T) {
 		t.Fatalf("Expected status code 200, but got %d", resp.StatusCode)
 	}
 
-	// You can add further assertions if needed
 }
 
 func TestGetOperation(t *testing.T) {
@@ -40,7 +39,6 @@ func TestGetOperation(t *testing.T) {
 		t.Fatalf("Expected status code 200, but got %d", resp.StatusCode)
 	}
 
-	// You can add further assertions if needed
 }
 
 func TestSearchOperation(t *testing.T) {
