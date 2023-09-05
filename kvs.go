@@ -40,7 +40,7 @@ func init() {
 	prometheus.MustRegister(httpResponse)
 }
 
-// Post represents the structure of the incoming POST request
+// Structure of the incoming POST request
 type Post struct {
 	Key   string `json:"key"`
 	Value string `json:"value"`
